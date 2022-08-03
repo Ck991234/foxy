@@ -1,0 +1,10 @@
+import pandas as pd
+import numpy as np
+def topt(latt,longi):
+    #df = pd.read_csv(r"C:\Users\Dell\Downloads\zogeo - Sheet2.csv")
+    inla = latt * 3.1415/180
+    inlo = longi * 3.1415/180
+    df["e_distance"] = np.sqrt(((inla - df["rad_latit"] )**2) + ((inlo - df["rad_longi"])**2))
+    df2 = {'Restaurant_Name': 'My Current Location', 'longitude': longi, 'lattitude':latt, 'e_distance':0  }
+    df1 = df.append(df2, ignore_index = True)
+    return df1.sort_values(["e_distance"],ascending=True).head(20)    
