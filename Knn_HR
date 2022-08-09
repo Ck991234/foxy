@@ -6,6 +6,6 @@ def topt(lattitude,longitude):
     inlattitude = lattitude * 3.1415/180
     inlongitude = longitude * 3.1415/180
     df["e_distance"] = np.sqrt(((inlattitude - df["rad_latit"] )**2) + ((inlongitude - df["rad_longi"])**2))
-    df2 = {'Restaurant_Name': 'My Current Location', 'longitude': longi, 'lattitude':latt, 'e_distance':0  }
+    df2 = {'Restaurant_Name': 'My Current Location', 'longitude': longitude, 'lattitude':lattitude, 'e_distance':0  }
     df1 = df.append(df2, ignore_index = True)
     return df1.sort_values(["e_distance"],ascending=True).head(20)    
