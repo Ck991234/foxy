@@ -13,8 +13,8 @@ st.write('Your Geo Location Is ',lattitude,longitude)
 @st.cache
 def topt(lattitude,longitude):
     df = pd.read_csv(url,index_col=0)
-    inlattitude = lattitude * 3.1415/180
-    inlongitude = longitude * 3.1415/180
+    inlattitude = lattitude * np.pi/180
+    inlongitude = longitude * np.pi/180
     df["e_distance"] = np.sqrt(((inlattitude - df["rad_latit"] )**2) + ((inlongitude - df["rad_longi"])**2))
     df2 = {'Restaurant_Name': 'My Current Location', 'longitude': longitude, 'lattitude':lattitude, 'e_distance':0  }
     df1 = df.append(df2, ignore_index = True)
