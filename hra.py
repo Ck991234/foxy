@@ -10,6 +10,7 @@ lattitude = st.number_input('What Is Your Lattitude')
 longitude = st.number_input('What Is Your Longitude')
 st.write('Your Geo Location Is ',lattitude,longitude)
 
+@st.cache
 def topt(lattitude,longitude):
     df = pd.read_csv(url,index_col=0)
     inlattitude = lattitude * 3.1415/180
