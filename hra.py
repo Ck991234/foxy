@@ -7,8 +7,9 @@ url = "https://github.com/Ck991234/foxy/blob/0a27593660add05b10b01230863c07e5913
 
 st.title('Pune Hotel Recommendation Engine')
 
-location = st.text_input('Type Location In Pune')
+location = st.text_input('Type Any Pune Location')
 
+#Geo Location Extractor
 def get_geolocation (place):
     g = geocoder.arcgis(str(place) +","+"Pune")
     return g.latlng
@@ -16,7 +17,7 @@ def get_geolocation (place):
 latlog = get_geolocation(location)
 st.write('Your Geo Location Is ',latlog[0],latlog[1])
 
-
+#KNN Algorithem 
 @st.cache
 def topt(lattitude,longitude):
     df = pd.read_csv(url,index_col=0)
