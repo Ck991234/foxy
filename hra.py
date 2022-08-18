@@ -7,7 +7,7 @@ url = "https://github.com/Ck991234/foxy/blob/0a27593660add05b10b01230863c07e5913
 
 st.title('Pune Hotel Recommendation Engine')
 
-location = st.text_input('Type Any Pune Location')
+location = st.text_input('Type Any Pune Location, It Will Show You 10 Closest Hotels Near You')
 
 #Geo Location Extractor
 def get_geolocation (place):
