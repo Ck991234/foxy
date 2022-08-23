@@ -3,3 +3,5 @@ pandas==1.4.3
 streamlit==1.11.1
 geocoder
 requests
+streamlit_folium
+streamlit_lottie
